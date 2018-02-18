@@ -14,16 +14,26 @@ namespace SeniorDesign.Classes
 {
     public class Setup
     {
+        public BluetoothDeviceInfo deviceInfo;
 
-        public static bool Connect()
+        Guid mUUID = new Guid("00001101-0000-1000-8000-00805F9B34FB");
+
+        public bool ClientConnect()
         {
             BluetoothClient client = new BluetoothClient();
             MessageBox.Show("Attempting to connect as client.");
+            client.BeginConnect(deviceInfo.DeviceAddress, mUUID, this.BluetoothClientConnectCallback, client);
             return false;
 
         }
 
+        void BluetoothClientConnectCallback(IAsyncResult result)
+        {
+            BluetoothClient client = (BluetoothClient)result.AsyncState;
+            client.EndConnect(result);
 
+            Stream stream = client.GetStream();
+        }
 
     }
 }

@@ -20,7 +20,8 @@ namespace SeniorDesign
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
-            if (Setup.Connect() == false)
+            Setup status = new Setup();
+            if (status.ClientConnect() == false)
             {
                 // failed to connect
             }
