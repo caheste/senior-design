@@ -9,3 +9,6 @@ c:\users\caroline hester\documents\visual studio 2015\Projects\SeniorDesign\obj\
 c:\users\caroline hester\documents\visual studio 2015\Projects\SeniorDesign\obj\Debug\SeniorDesign.csproj.GenerateResource.Cache
 c:\users\caroline hester\documents\visual studio 2015\Projects\SeniorDesign\obj\Debug\SeniorDesign.exe
 c:\users\caroline hester\documents\visual studio 2015\Projects\SeniorDesign\obj\Debug\SeniorDesign.pdb
+C:\Users\Caroline Hester\Source\Repos\senior-design\SeniorDesign\bin\Debug\SeniorDesign.exe.config
+C:\Users\Caroline Hester\Source\Repos\senior-design\SeniorDesign\obj\Debug\SeniorDesign.exe
+C:\Users\Caroline Hester\Source\Repos\senior-design\SeniorDesign\obj\Debug\SeniorDesign.pdb
