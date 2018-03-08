@@ -9,31 +9,41 @@ using InTheHand.Net.Ports;
 using InTheHand.Net.Sockets;
 using System.IO;
 using System.Windows.Forms;
+using System.IO.Ports;
 
 namespace SeniorDesign.Classes
 {
-    public class Setup
+    public static class Setup
     {
-        public BluetoothDeviceInfo deviceInfo;
-
-        Guid mUUID = new Guid("00001101-0000-1000-8000-00805F9B34FB");
-
-        public bool ClientConnect()
+        static SerialPort SP = new SerialPort("COM4");
+        public static void Send(string message)
         {
-            BluetoothClient client = new BluetoothClient();
-            MessageBox.Show("Attempting to connect as client.");
-            client.BeginConnect(deviceInfo.DeviceAddress, mUUID, this.BluetoothClientConnectCallback, client);
-            return false;
-
+            StringComparer stringComp = StringComparer.OrdinalIgnoreCase;
+            SP.BaudRate = 9600;
+            SP.Parity = Parity.None;
+            SP.StopBits = StopBits.One;
+            SP.DataBits = 8;
+            SP.Handshake = Handshake.None;
+            SP.RtsEnable = true;
+            if (SP != null)
+            {
+                if (SP.IsOpen)
+                {
+                    SP.WriteLine(message);
+                }
+                else
+                {
+                    SP.Open();
+                    //SP.ReadTimeout = 1000;
+                    SP.WriteLine(message);
+                }
+            }
+        }
+        public static void OnApplicationQuit()
+        {
+            SP.Close();
         }
 
-        void BluetoothClientConnectCallback(IAsyncResult result)
-        {
-            BluetoothClient client = (BluetoothClient)result.AsyncState;
-            client.EndConnect(result);
-
-            Stream stream = client.GetStream();
-        }
 
     }
 }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.buttonStart = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -55,7 +54,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(76, 57);
             this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
+            this.button1.Text = "Drive Left";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
@@ -64,8 +63,9 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(76, 57);
             this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
+            this.button2.Text = "Speed Up";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -73,7 +73,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(76, 57);
             this.button3.TabIndex = 3;
-            this.button3.Text = "button3";
+            this.button3.Text = "Drive Right";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button4
@@ -82,8 +82,9 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(76, 57);
             this.button4.TabIndex = 4;
-            this.button4.Text = "button4";
+            this.button4.Text = "Slow Down";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -91,12 +92,11 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(76, 57);
             this.button5.TabIndex = 5;
-            this.button5.Text = "button5";
+            this.button5.Text = "Drive Forward";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.ImageLocation = "C:\\Users\\Caroline Hester\\source\\repos\\senior-design\\SeniorDesign\\Image\\clemson_bi" +
     "ke.jpg";
             this.pictureBox1.Location = new System.Drawing.Point(403, 117);
